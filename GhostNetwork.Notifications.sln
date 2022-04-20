@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Api", "GhostNetwork.Notifications.Api\GhostNetwork.Notifications.Api.csproj", "{AA52D17B-08EC-4BDE-AC91-C730CD4F5248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Core", "GhostNetwork.Notifications.Core\GhostNetwork.Notifications.Core.csproj", "{4E32E1DC-0FDD-4E4C-8B74-E4BD9B2ABB81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Web", "GhostNetwork.Notifications.Channels.Web\GhostNetwork.Notifications.Channels.Web.csproj", "{AD9EA0B5-930E-4047-B081-2B67E4C08934}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Email", "GhostNetwork.Notifications.Channels.Email\GhostNetwork.Notifications.Channels.Email.csproj", "{3072DA21-B674-409F-A975-D3F83EAE8EC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA52D17B-08EC-4BDE-AC91-C730CD4F5248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA52D17B-08EC-4BDE-AC91-C730CD4F5248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA52D17B-08EC-4BDE-AC91-C730CD4F5248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA52D17B-08EC-4BDE-AC91-C730CD4F5248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E32E1DC-0FDD-4E4C-8B74-E4BD9B2ABB81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E32E1DC-0FDD-4E4C-8B74-E4BD9B2ABB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E32E1DC-0FDD-4E4C-8B74-E4BD9B2ABB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E32E1DC-0FDD-4E4C-8B74-E4BD9B2ABB81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9EA0B5-930E-4047-B081-2B67E4C08934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9EA0B5-930E-4047-B081-2B67E4C08934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9EA0B5-930E-4047-B081-2B67E4C08934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9EA0B5-930E-4047-B081-2B67E4C08934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3072DA21-B674-409F-A975-D3F83EAE8EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3072DA21-B674-409F-A975-D3F83EAE8EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3072DA21-B674-409F-A975-D3F83EAE8EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3072DA21-B674-409F-A975-D3F83EAE8EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
