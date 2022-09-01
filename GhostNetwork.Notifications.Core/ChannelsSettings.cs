@@ -6,14 +6,14 @@ namespace GhostNetwork.Notifications.Core;
 public class ChannelsSettings
 {
     private readonly UserChannelSettings defaultValue = new UserChannelSettings(true);
-    private readonly Dictionary<Guid, UserChannelSettings> settings;
+    private readonly Dictionary<string, UserChannelSettings> settings;
 
-    public ChannelsSettings(Dictionary<Guid, UserChannelSettings> settings)
+    public ChannelsSettings(Dictionary<string, UserChannelSettings> settings)
     {
         this.settings = settings;
     }
 
-    public UserChannelSettings this[Guid channelId] => settings.ContainsKey(channelId)
+    public UserChannelSettings this[string channelId] => settings.ContainsKey(channelId)
         ? settings[channelId]
         : defaultValue;
 }

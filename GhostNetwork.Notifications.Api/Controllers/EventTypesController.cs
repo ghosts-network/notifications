@@ -1,8 +1,6 @@
-using System;
-using System.Linq;
+using System.Threading.Tasks;
 using GhostNetwork.Notifications.Core;
 using Microsoft.AspNetCore.Mvc;
-using NotificationsHub.Api.Controllers;
 
 namespace GhostNetwork.Notifications.Api.Controllers;
 
@@ -11,19 +9,14 @@ namespace GhostNetwork.Notifications.Api.Controllers;
 public class EventTypesController : ControllerBase
 {
     private readonly EventTypesStorage eventTypesStorage;
-    private readonly UserSettingsStorage userSettingsStorage;
-    private readonly TemplateCompiler templateCompiler;
-    private readonly ChannelsStorage channelTriggerProvider;
+    private readonly NotificationManager notificationManager;
 
-    public EventTypesController(EventTypesStorage eventTypesStorage,
-        UserSettingsStorage userSettingsStorage,
-        TemplateCompiler templateCompiler,
-        ChannelsStorage channelTriggerProvider)
+    public EventTypesController(
+        EventTypesStorage eventTypesStorage,
+        NotificationManager notificationManager)
     {
         this.eventTypesStorage = eventTypesStorage;
-        this.userSettingsStorage = userSettingsStorage;
-        this.templateCompiler = templateCompiler;
-        this.channelTriggerProvider = channelTriggerProvider;
+        this.notificationManager = notificationManager;
     }
 
     [HttpGet]
@@ -33,52 +26,15 @@ public class EventTypesController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public ActionResult Get([FromRoute] Guid id)
+    public ActionResult Get([FromRoute] string id)
     {
         return Ok(eventTypesStorage.GetById(id));
     }
 
     [HttpPost("{id}/trigger")]
-    public ActionResult Trigger([FromRoute] Guid id, [FromBody] Trigger trigger)
+    public async Task<ActionResult> Trigger([FromRoute] string id, [FromBody] Trigger trigger)
     {
-        var eventType = eventTypesStorage.GetById(id);
-        if (eventType == null)
-        {
-            ModelState.AddModelError("id", "Event type not found");
-            return BadRequest();
-        }
-
-        foreach (var eventChannel in eventType.Channels)
-        {
-            if (!channelTriggerProvider.HasTriggerForChannel(eventChannel.ChannelId))
-            {
-                ModelState.AddModelError("ChannelId", "Channel not found");
-                BadRequest();
-            }
-        }
-
-        var templates = eventType.Channels
-            .Select(eventChannel => new
-            {
-                Template = templateCompiler.GetTemplate(eventChannel.Template),
-                eventChannel.ChannelId
-            })
-            .ToList();
-
-        foreach (var recipient in trigger.Recipients)
-        {
-            foreach (var template in templates)
-            {
-                var userSettings = userSettingsStorage.GetUserSettings(recipient.Id);
-                if (!userSettings[id][template.ChannelId].Enabled)
-                {
-                    continue;
-                }
-
-                var message = template.Template.Invoke(trigger.Object.AddRecipient(recipient))!;
-                channelTriggerProvider.GetTrigger(template.ChannelId).FireAndForget(message, recipient);
-            }
-        }
+        await notificationManager.TriggerAsync(id, trigger);
 
         return NoContent();
     }

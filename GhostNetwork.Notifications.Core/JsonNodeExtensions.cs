@@ -1,8 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using GhostNetwork.Notifications.Core;
 
-namespace GhostNetwork.Notifications.Api.Controllers;
+namespace GhostNetwork.Notifications.Core;
 
 public static class JsonNodeExtensions
 {
