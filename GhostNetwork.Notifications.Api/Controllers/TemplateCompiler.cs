@@ -7,10 +7,12 @@ namespace GhostNetwork.Notifications.Api.Controllers;
 
 public class TemplateCompiler : ITemplateCompiler
 {
-    public string GetMessage(string eventType, string channel, JsonElement body)
+    public CompiledTemplate GetMessage(Template template, JsonElement body)
     {
         var hb = Handlebars.Create()!;
         hb.Configuration.UseJson();
-        return hb.Compile("Email: {{recipient.fullName}} Time off request from {{requester.fullName}} is pending your approval").Invoke(body);
+        var result = hb.Compile(template.Main).Invoke(body);
+
+        return new CompiledTemplate(result);
     }
 }

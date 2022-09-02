@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Email", "GhostNetwork.Notifications.Channels.Email\GhostNetwork.Notifications.Channels.Email.csproj", "{3072DA21-B674-409F-A975-D3F83EAE8EC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.TemplateStorage.Folder", "GhostNetwork.Notifications.TemplateStorage.Folder\GhostNetwork.Notifications.TemplateStorage.Folder.csproj", "{422967F3-73DA-452A-8C4B-ACC728BDA4AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{3072DA21-B674-409F-A975-D3F83EAE8EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3072DA21-B674-409F-A975-D3F83EAE8EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3072DA21-B674-409F-A975-D3F83EAE8EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422967F3-73DA-452A-8C4B-ACC728BDA4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422967F3-73DA-452A-8C4B-ACC728BDA4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422967F3-73DA-452A-8C4B-ACC728BDA4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422967F3-73DA-452A-8C4B-ACC728BDA4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
