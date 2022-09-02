@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using GhostNetwork.Notifications.Core;
@@ -19,14 +20,14 @@ public class FolderTemplateStorage : ITemplateStorage
     
     public Task<Template> GetTemplateAsync(TemplateSelector selector)
     {
-        var template = File.ReadAllText(Path.Combine(options.RootFolder, fileSelector.BuildFileName(selector)));
+        var template = File.ReadAllText(Path.Combine(options.RootFolder, fileSelector.BuildFilePath(selector)));
         return Task.FromResult(new Template(template));
     }
 }
 
 public interface IFileSelector
 {
-    string BuildFileName(TemplateSelector selector);
+    string BuildFilePath(TemplateSelector selector);
 }
 
 public class DefaultFileSelector : IFileSelector
@@ -38,10 +39,25 @@ public class DefaultFileSelector : IFileSelector
         this.extension = extension;
     }
 
-    public string BuildFileName(TemplateSelector selector)
+    public string BuildFilePath(TemplateSelector selector)
     {
-        return selector.Culture == null
-            ? $"{selector.ChannelId}.{extension}"
-            : $"{selector.ChannelId}.{selector.Culture}.{extension}";
+        var fileNameParts = new List<string>(4)
+        {
+            selector.ChannelId
+        };
+
+        if (selector.TemplateType != null)
+        {
+            fileNameParts.Add(selector.TemplateType);
+        }
+
+        if (selector.Culture != null)
+        {
+            fileNameParts.Add(selector.Culture);
+        }
+
+        fileNameParts.Add(extension);
+
+        return Path.Combine(selector.EventTypeId, string.Join('.', fileNameParts));
     }
 }
