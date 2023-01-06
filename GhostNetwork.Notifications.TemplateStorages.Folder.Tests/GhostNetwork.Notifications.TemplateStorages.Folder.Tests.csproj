@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
@@ -13,7 +12,7 @@
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\GhostNetwork.Notifications.TemplateStorage.Folder\GhostNetwork.Notifications.TemplateStorage.Folder.csproj" />
+      <ProjectReference Include="..\GhostNetwork.Notifications.TemplateStorages.Folder\GhostNetwork.Notifications.TemplateStorages.Folder.csproj" />
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Include="templates\user-email-changed\email.subject.html">

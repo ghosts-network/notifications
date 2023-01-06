@@ -4,5 +4,5 @@ namespace GhostNetwork.Notifications.Core;
 
 public interface ITemplateCompiler
 {
-    CompiledTemplate GetMessage(Template template, JsonElement body);
+    string GetMessage(Template template, JsonElement body);
 }

@@ -1,3 +1,3 @@
-namespace GhostNetwork.Notifications.TemplateStorage.Folder;
+namespace GhostNetwork.Notifications.TemplateStorages.Folder;
 
 public record FolderTemplateStorageOptions(string RootFolder);

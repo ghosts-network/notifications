@@ -9,14 +9,14 @@ public class NotificationManager
     private readonly IUserSettingsStorage userSettingsStorage;
     private readonly ITemplateCompiler templateCompiler;
     private readonly ITemplateStorage templateStorage;
-    private readonly IChannelsStorage channelTriggerProvider;
+    private readonly ChannelsStorage channelTriggerProvider;
 
     public NotificationManager(
         IEventTypesStorage eventTypesStorage,
         IUserSettingsStorage userSettingsStorage,
         ITemplateCompiler templateCompiler,
         ITemplateStorage templateStorage,
-        IChannelsStorage channelTriggerProvider)
+        ChannelsStorage channelTriggerProvider)
     {
         this.eventTypesStorage = eventTypesStorage;
         this.userSettingsStorage = userSettingsStorage;
@@ -51,12 +51,17 @@ public class NotificationManager
                     continue;
                 }
 
-                var template = await templateStorage.GetTemplateAsync(new TemplateSelector(eventType.Id, eventChannel.ChannelId));
-                var message = templateCompiler.GetMessage(template, trigger.Object.AddRecipient(recipient));
+                var bodyWithRecipient = trigger.Object.AddRecipient(recipient);
+                var main = templateCompiler.GetMessage(
+                    await templateStorage.GetTemplateAsync(new TemplateSelector(eventType.Id, eventChannel.ChannelId)),
+                    bodyWithRecipient);
+                var subject = templateCompiler.GetMessage(
+                    await templateStorage.GetTemplateAsync(new TemplateSelector(eventType.Id, eventChannel.ChannelId, "subject")),
+                    bodyWithRecipient);
 
                 channelTriggerProvider
                     .GetTrigger(eventChannel.ChannelId)
-                    .FireAndForget(message, recipient);
+                    .FireAndForget(new CompiledTemplate(main, subject), recipient);
             }
         }
     }

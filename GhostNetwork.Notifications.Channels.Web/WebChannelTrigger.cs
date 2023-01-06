@@ -1,3 +1,4 @@
+using System;
 using GhostNetwork.Notifications.Core;
 
 namespace GhostNetwork.Notifications.Channels.Web;

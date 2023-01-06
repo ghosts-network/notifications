@@ -1,7 +1,10 @@
-﻿using GhostNetwork.Notifications.Core;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
+using GhostNetwork.Notifications.Core;
 using NUnit.Framework;
 
-namespace GhostNetwork.Notifications.TemplateStorage.Folder.Tests;
+namespace GhostNetwork.Notifications.TemplateStorages.Folder.Tests;
 
 [TestFixture]
 public class FolderTemplateStorageTests

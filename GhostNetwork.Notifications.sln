@@ -6,11 +6,35 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Web", "GhostNetwork.Notifications.Channels.Web\GhostNetwork.Notifications.Channels.Web.csproj", "{AD9EA0B5-930E-4047-B081-2B67E4C08934}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Email", "GhostNetwork.Notifications.Channels.Email\GhostNetwork.Notifications.Channels.Email.csproj", "{3072DA21-B674-409F-A975-D3F83EAE8EC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Smtp", "GhostNetwork.Notifications.Channels.Smtp\GhostNetwork.Notifications.Channels.Smtp.csproj", "{3072DA21-B674-409F-A975-D3F83EAE8EC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.TemplateStorage.Folder", "GhostNetwork.Notifications.TemplateStorage.Folder\GhostNetwork.Notifications.TemplateStorage.Folder.csproj", "{422967F3-73DA-452A-8C4B-ACC728BDA4AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.TemplateStorages.Folder", "GhostNetwork.Notifications.TemplateStorages.Folder\GhostNetwork.Notifications.TemplateStorages.Folder.csproj", "{422967F3-73DA-452A-8C4B-ACC728BDA4AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.TemplateStorage.Folder.Tests", "GhostNetwork.Notifications.TemplateStorage.Folder.Tests\GhostNetwork.Notifications.TemplateStorage.Folder.Tests.csproj", "{2776FE44-B8A4-40AE-9D57-BB5550F46672}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.TemplateStorages.Folder.Tests", "GhostNetwork.Notifications.TemplateStorages.Folder.Tests\GhostNetwork.Notifications.TemplateStorages.Folder.Tests.csproj", "{2776FE44-B8A4-40AE-9D57-BB5550F46672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Smtp.Tests", "GhostNetwork.Notifications.Channels.Smtp.Tests\GhostNetwork.Notifications.Channels.Smtp.Tests.csproj", "{AECFED4A-C970-419C-A601-39D27A724006}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Channels", "Channels", "{A7292590-97B1-414B-A0DD-4901C034499F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Smtp", "Smtp", "{C2815CC5-C026-4D7A-BBE5-A9481ED12D26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{B4268521-50CD-4FCC-828B-3AA4B7ADBBCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Smtp.DependencyInjection", "Channels\Smtp\GhostNetwork.Notifications.Channels.Smtp.DependencyInjection\GhostNetwork.Notifications.Channels.Smtp.DependencyInjection.csproj", "{9F1EE151-DC62-44F0-86EB-8F1B79A2DE0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Core.DependencyInjection", "GhostNetwork.Notifications.Core.DependencyInjection\GhostNetwork.Notifications.Core.DependencyInjection.csproj", "{7954D9F1-2437-4F51-BAEE-38C4D73CC482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.Web.DependencyInjection", "Channels\GhostNetwork.Notifications.Channels.Web.DependencyInjection\GhostNetwork.Notifications.Channels.Web.DependencyInjection.csproj", "{BB437CC4-8FE4-46EF-B4EE-1A8346997C30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateStorages", "TemplateStorages", "{5769B4A4-EB75-49F4-985A-A9E2B71F43E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Folder", "Folder", "{004CF40B-5E54-4702-81B5-F932A1A16E9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.TemplateStorages.Folder.DependencyInjection", "GhostNetwork.Notifications.TemplateStorages.Folder.DependencyInjection\GhostNetwork.Notifications.TemplateStorages.Folder.DependencyInjection.csproj", "{9A7FF994-8E7B-4ABE-87E6-89C4ECB08F47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateCompilers", "TemplateCompilers", "{862FDA2D-4F34-4552-AB3F-D69F05F2AB85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.TemplateCompilers.Handlebars", "GhostNetwork.Notifications.TemplateCompilers.Handlebars\GhostNetwork.Notifications.TemplateCompilers.Handlebars.csproj", "{69C27526-93A2-49CA-B91F-A2B80A3314E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +66,43 @@ Global
 		{2776FE44-B8A4-40AE-9D57-BB5550F46672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2776FE44-B8A4-40AE-9D57-BB5550F46672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2776FE44-B8A4-40AE-9D57-BB5550F46672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AECFED4A-C970-419C-A601-39D27A724006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECFED4A-C970-419C-A601-39D27A724006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECFED4A-C970-419C-A601-39D27A724006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECFED4A-C970-419C-A601-39D27A724006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1EE151-DC62-44F0-86EB-8F1B79A2DE0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1EE151-DC62-44F0-86EB-8F1B79A2DE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1EE151-DC62-44F0-86EB-8F1B79A2DE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1EE151-DC62-44F0-86EB-8F1B79A2DE0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7954D9F1-2437-4F51-BAEE-38C4D73CC482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7954D9F1-2437-4F51-BAEE-38C4D73CC482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7954D9F1-2437-4F51-BAEE-38C4D73CC482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7954D9F1-2437-4F51-BAEE-38C4D73CC482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB437CC4-8FE4-46EF-B4EE-1A8346997C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB437CC4-8FE4-46EF-B4EE-1A8346997C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB437CC4-8FE4-46EF-B4EE-1A8346997C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB437CC4-8FE4-46EF-B4EE-1A8346997C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7FF994-8E7B-4ABE-87E6-89C4ECB08F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7FF994-8E7B-4ABE-87E6-89C4ECB08F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7FF994-8E7B-4ABE-87E6-89C4ECB08F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7FF994-8E7B-4ABE-87E6-89C4ECB08F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C27526-93A2-49CA-B91F-A2B80A3314E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C27526-93A2-49CA-B91F-A2B80A3314E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C27526-93A2-49CA-B91F-A2B80A3314E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C27526-93A2-49CA-B91F-A2B80A3314E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2815CC5-C026-4D7A-BBE5-A9481ED12D26} = {A7292590-97B1-414B-A0DD-4901C034499F}
+		{3072DA21-B674-409F-A975-D3F83EAE8EC5} = {C2815CC5-C026-4D7A-BBE5-A9481ED12D26}
+		{AECFED4A-C970-419C-A601-39D27A724006} = {C2815CC5-C026-4D7A-BBE5-A9481ED12D26}
+		{B4268521-50CD-4FCC-828B-3AA4B7ADBBCF} = {A7292590-97B1-414B-A0DD-4901C034499F}
+		{AD9EA0B5-930E-4047-B081-2B67E4C08934} = {B4268521-50CD-4FCC-828B-3AA4B7ADBBCF}
+		{9F1EE151-DC62-44F0-86EB-8F1B79A2DE0A} = {C2815CC5-C026-4D7A-BBE5-A9481ED12D26}
+		{BB437CC4-8FE4-46EF-B4EE-1A8346997C30} = {B4268521-50CD-4FCC-828B-3AA4B7ADBBCF}
+		{004CF40B-5E54-4702-81B5-F932A1A16E9F} = {5769B4A4-EB75-49F4-985A-A9E2B71F43E8}
+		{422967F3-73DA-452A-8C4B-ACC728BDA4AD} = {004CF40B-5E54-4702-81B5-F932A1A16E9F}
+		{2776FE44-B8A4-40AE-9D57-BB5550F46672} = {004CF40B-5E54-4702-81B5-F932A1A16E9F}
+		{9A7FF994-8E7B-4ABE-87E6-89C4ECB08F47} = {004CF40B-5E54-4702-81B5-F932A1A16E9F}
+		{69C27526-93A2-49CA-B91F-A2B80A3314E1} = {862FDA2D-4F34-4552-AB3F-D69F05F2AB85}
 	EndGlobalSection
 EndGlobal
