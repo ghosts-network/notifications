@@ -1,3 +1,5 @@
+using System.Threading;
+using System.Threading.Tasks;
 using GhostNetwork.Notifications.Channels.Smtp.AbstractWorkersPool;
 using Microsoft.Extensions.Options;
 using MimeKit;

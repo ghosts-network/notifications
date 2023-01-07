@@ -1,5 +1,9 @@
+using System;
+using System.IO;
 using System.Net.Sockets;
+using System.Threading;
 using System.Threading.Channels;
+using System.Threading.Tasks;
 using GhostNetwork.Notifications.Channels.Smtp.AbstractWorkersPool;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;

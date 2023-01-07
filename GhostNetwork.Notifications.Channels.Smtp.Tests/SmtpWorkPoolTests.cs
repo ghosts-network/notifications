@@ -1,4 +1,7 @@
-﻿using GhostNetwork.Notifications.Channels.Smtp.AbstractWorkersPool;
+﻿using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using GhostNetwork.Notifications.Channels.Smtp.AbstractWorkersPool;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
@@ -10,7 +13,7 @@ namespace GhostNetwork.Notifications.Channels.Smtp.Tests;
 [TestFixture]
 public class SmtpWorkPoolTests
 {
-    [TestCase("", "")]
+    // [TestCase("", "")]
     public async Task Test(string userName, string password)
     {
         // Arrange

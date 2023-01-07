@@ -2,9 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>GhostNetwork.Notifications.Channels.EmailRawSmtp</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,13 +11,8 @@
 
     <ItemGroup>
       <PackageReference Include="MailKit" Version="3.4.3" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.0" />
       <PackageReference Include="Polly" Version="7.2.3" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="Microsoft.Extensions.Options">
-        <HintPath>..\..\..\..\..\..\..\usr\local\share\dotnet\shared\Microsoft.AspNetCore.App\6.0.3\Microsoft.Extensions.Options.dll</HintPath>
-      </Reference>
     </ItemGroup>
 
 </Project>
