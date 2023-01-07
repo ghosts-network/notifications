@@ -8,17 +8,8 @@
     <ItemGroup>
       <ProjectReference Include="..\Channels\GhostNetwork.Notifications.Channels.Web.DependencyInjection\GhostNetwork.Notifications.Channels.Web.DependencyInjection.csproj" />
       <ProjectReference Include="..\Channels\Smtp\GhostNetwork.Notifications.Channels.Smtp.DependencyInjection\GhostNetwork.Notifications.Channels.Smtp.DependencyInjection.csproj" />
-      <ProjectReference Include="..\GhostNetwork.Notifications.Channels.Smtp\GhostNetwork.Notifications.Channels.Smtp.csproj" />
-      <ProjectReference Include="..\GhostNetwork.Notifications.Channels.Web\GhostNetwork.Notifications.Channels.Web.csproj" />
-      <ProjectReference Include="..\GhostNetwork.Notifications.Core.DependencyInjection\GhostNetwork.Notifications.Core.DependencyInjection.csproj" />
-      <ProjectReference Include="..\GhostNetwork.Notifications.Core\GhostNetwork.Notifications.Core.csproj" />
       <ProjectReference Include="..\GhostNetwork.Notifications.TemplateCompilers.Handlebars\GhostNetwork.Notifications.TemplateCompilers.Handlebars.csproj" />
       <ProjectReference Include="..\GhostNetwork.Notifications.TemplateStorages.Folder.DependencyInjection\GhostNetwork.Notifications.TemplateStorages.Folder.DependencyInjection.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Handlebars.Net" Version="2.1.2" />
-      <PackageReference Include="Handlebars.Net.Extension.Json" Version="1.0.0" />
     </ItemGroup>
 
     <ItemGroup>
