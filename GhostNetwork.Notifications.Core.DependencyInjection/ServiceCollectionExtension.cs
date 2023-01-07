@@ -16,9 +16,9 @@ public static class ServiceCollectionExtension
         serviceCollection.AddSingleton<ChannelsStorage>(provider =>
         {
             var storage = new ChannelsStorage();
-            foreach (var triggerType in options.TriggerTypes)
+            foreach (var channel in options.Channels)
             {
-                storage.RegisterTrigger((provider.GetRequiredService(triggerType) as IChannelTrigger)!);
+                storage.RegisterTrigger(channel.Id, (provider.GetRequiredService(channel.TriggerType) as IChannelTrigger)!);
             }
 
             return storage;

@@ -7,6 +7,7 @@ namespace GhostNetwork.Notifications.Channels.Smtp.DependencyInjection;
 public static class ServiceCollectionExtension
 {
     public static ChannelsOptions AddSmtpChannel(this ChannelsOptions options,
+        string id,
         Action<SmtpChannelTriggerConfiguration> configureOptions)
     {
         options.Services.Configure(configureOptions);
@@ -15,7 +16,7 @@ public static class ServiceCollectionExtension
         options.Services.AddSingleton<SmtpSender>();
         options.Services.AddSingleton<SmtpChannelTrigger>();
         
-        options.AddTrigger<SmtpChannelTrigger>();
+        options.AddTrigger<SmtpChannelTrigger>(id);
 
         return options;
     }

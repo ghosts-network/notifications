@@ -6,6 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Channels\GhostNetwork.Notifications.Channels.SendGrid.DependencyInjection\GhostNetwork.Notifications.Channels.SendGrid.DependencyInjection.csproj" />
       <ProjectReference Include="..\Channels\GhostNetwork.Notifications.Channels.Web.DependencyInjection\GhostNetwork.Notifications.Channels.Web.DependencyInjection.csproj" />
       <ProjectReference Include="..\Channels\Smtp\GhostNetwork.Notifications.Channels.Smtp.DependencyInjection\GhostNetwork.Notifications.Channels.Smtp.DependencyInjection.csproj" />
       <ProjectReference Include="..\GhostNetwork.Notifications.TemplateCompilers.Handlebars\GhostNetwork.Notifications.TemplateCompilers.Handlebars.csproj" />

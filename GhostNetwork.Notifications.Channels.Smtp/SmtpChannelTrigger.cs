@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using GhostNetwork.Notifications.Core;
 using Microsoft.Extensions.Options;
 using MimeKit;
@@ -11,7 +12,7 @@ public class SmtpChannelTrigger : IChannelTrigger
     private readonly IOptionsMonitor<SmtpChannelTriggerConfiguration> configuration;
 
     public const string Id = "email";
-    public Channel Channel { get; } = new Channel(Id, "Email");
+    public Channel Channel { get; } = new Channel(Id, "Email (SMTP)");
 
     public SmtpChannelTrigger(
         SmtpSender sender,
@@ -21,7 +22,7 @@ public class SmtpChannelTrigger : IChannelTrigger
         this.configuration = configuration;
     }
 
-    public void FireAndForget(CompiledContent template, Recipient recipient)
+    public async Task FireAndForgetAsync(CompiledContent template, Recipient recipient)
     {
         var senderInfo = configuration.CurrentValue.Sender;
         
@@ -35,8 +36,6 @@ public class SmtpChannelTrigger : IChannelTrigger
             Text = template.Main
         };
 
-        sender.SendAsync(emailMessage)
-            .GetAwaiter()
-            .GetResult();
+        await sender.SendAsync(emailMessage).ConfigureAwait(false);
     }
 }

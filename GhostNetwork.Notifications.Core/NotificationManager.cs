@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GhostNetwork.Notifications.Core;
@@ -41,6 +43,7 @@ public class NotificationManager
             }
         }
 
+        var tasks = new List<Task>(trigger.Recipients.Count() * eventType.Channels.Count());
         foreach (var recipient in trigger.Recipients)
         {
             foreach (var eventChannel in eventType.Channels)
@@ -59,10 +62,14 @@ public class NotificationManager
                     await templateStorage.GetTemplateAsync(new TemplateSelector(eventType.Id, eventChannel.ChannelId, "subject")),
                     bodyWithRecipient);
 
-                channelTriggerProvider
+                var task = channelTriggerProvider
                     .GetTrigger(eventChannel.ChannelId)
-                    .FireAndForget(new CompiledContent(main, subject), recipient);
+                    .FireAndForgetAsync(new CompiledContent(main, subject), recipient);
+
+                tasks.Add(task);
             }
         }
+
+        await Task.WhenAll(tasks);
     }
 }

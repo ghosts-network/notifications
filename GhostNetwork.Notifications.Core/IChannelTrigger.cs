@@ -1,7 +1,8 @@
+using System.Threading.Tasks;
+
 namespace GhostNetwork.Notifications.Core;
 
 public interface IChannelTrigger
 {
-    Channel Channel { get; }
-    void FireAndForget(CompiledContent message, Recipient recipient);
+    Task FireAndForgetAsync(CompiledContent message, Recipient recipient);
 }

@@ -1,15 +1,14 @@
 using System;
+using System.Threading.Tasks;
 using GhostNetwork.Notifications.Core;
 
 namespace GhostNetwork.Notifications.Channels.Web;
 
 public class WebChannelTrigger : IChannelTrigger
 {
-    public const string Id = "web";
-    public Channel Channel { get; } = new Channel(Id, "Web");
-
-    public void FireAndForget(CompiledContent message, Recipient recipient)
+    public Task FireAndForgetAsync(CompiledContent message, Recipient recipient)
     {
         Console.WriteLine($"Web notification to {recipient.Id}:{recipient.Email}. Message: {message}");
+        return Task.CompletedTask;
     }
 }

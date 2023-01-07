@@ -11,9 +11,9 @@ public class ChannelsStorage
         triggers = new Dictionary<string, IChannelTrigger>();
     }
 
-    public void RegisterTrigger(IChannelTrigger trigger)
+    public void RegisterTrigger(string channelId, IChannelTrigger trigger)
     {
-        triggers[trigger.Channel.Id] = trigger;
+        triggers[channelId] = trigger;
     }
 
     public IChannelTrigger GetTrigger(string channelId)

@@ -8,7 +8,9 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "SMTP_HOST": "",
         "SMTP_USERNAME": "",
-        "SMTP_PASSWORD": ""
+        "SMTP_PASSWORD": "",
+        "SENDGRID_APIKEY": "",
+        "SENDGRID_USERNAME": ""
       }
     }
   }
