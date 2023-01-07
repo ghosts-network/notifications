@@ -61,7 +61,7 @@ public class NotificationManager
 
                 channelTriggerProvider
                     .GetTrigger(eventChannel.ChannelId)
-                    .FireAndForget(new CompiledTemplate(main, subject), recipient);
+                    .FireAndForget(new CompiledContent(main, subject), recipient);
             }
         }
     }

@@ -21,7 +21,7 @@ public class SmtpChannelTrigger : IChannelTrigger
         this.configuration = configuration;
     }
 
-    public void FireAndForget(CompiledTemplate template, Recipient recipient)
+    public void FireAndForget(CompiledContent template, Recipient recipient)
     {
         var senderInfo = configuration.CurrentValue.Sender;
         
