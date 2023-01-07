@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using GhostNetwork.Notifications.Core;
 using Microsoft.Extensions.Options;
 using SendGrid;
@@ -28,5 +29,9 @@ public class SendGridChannelTrigger : IChannelTrigger
         var msg = MailHelper.CreateSingleEmail(from, to, message.Subject, message.Main, message.Main);
 
         var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(await response.Body.ReadAsStringAsync());
+        }
     }
 }
