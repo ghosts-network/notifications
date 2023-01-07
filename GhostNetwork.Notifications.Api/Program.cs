@@ -51,7 +51,7 @@ builder.Services
     })
     .AddEventStorage<EventTypesStorage>()
     .AddTemplateCompiler<HandlebarsTemplateCompiler>()
-    .AddFolderTemplateStorage(new FolderTemplateStorageOptions(Path.Combine(Environment.CurrentDirectory, "templates")));
+    .AddFolderTemplateStorage(new FolderTemplateStorageOptions(Path.Combine(Environment.CurrentDirectory, "Templates")));
 
 var app = builder.Build();
 
