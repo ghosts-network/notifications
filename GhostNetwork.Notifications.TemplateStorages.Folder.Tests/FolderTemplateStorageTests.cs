@@ -25,7 +25,7 @@ public class FolderTemplateStorageTests
         var result = await storage.GetTemplateAsync(templateSelector);
 
         // Assert
-        Assert.AreEqual($"<p>{channelId} user-email-changed template</p>", result.Main);
+        Assert.AreEqual($"<p>{channelId} user-email-changed template</p>", result);
     }
 
     [Test]
@@ -41,6 +41,6 @@ public class FolderTemplateStorageTests
         var result = await storage.GetTemplateAsync(templateSelector);
 
         // Assert
-        Assert.AreEqual("<p>email user-email-changed subject template</p>", result.Main);
+        Assert.AreEqual("<p>email user-email-changed subject template</p>", result);
     }
 }

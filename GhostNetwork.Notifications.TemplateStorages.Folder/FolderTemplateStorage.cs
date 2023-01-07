@@ -17,9 +17,9 @@ public class FolderTemplateStorage : ITemplateStorage
         this.options = options;
     }
     
-    public Task<Template> GetTemplateAsync(TemplateSelector selector)
+    public Task<string> GetTemplateAsync(TemplateSelector selector)
     {
         var template = File.ReadAllText(Path.Combine(options.RootFolder, fileSelector.BuildFilePath(selector)));
-        return Task.FromResult(new Template(template));
+        return Task.FromResult(template);
     }
 }
