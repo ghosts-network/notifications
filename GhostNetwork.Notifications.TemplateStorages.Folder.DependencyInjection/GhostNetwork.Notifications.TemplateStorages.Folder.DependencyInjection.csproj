@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GhostNetwork.Notifications.Core.DependencyInjection\GhostNetwork.Notifications.Core.DependencyInjection.csproj" />
+      <ProjectReference Include="..\GhostNetwork.Notifications.TemplateStorages.Folder\GhostNetwork.Notifications.TemplateStorages.Folder.csproj" />
+    </ItemGroup>
+
+</Project>

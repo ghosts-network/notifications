@@ -1,5 +1,3 @@
-using System;
-
 namespace GhostNetwork.Notifications.Core;
 
-public record Channel(Guid Id, string Name);
+public record Channel(string Id, string Name);
