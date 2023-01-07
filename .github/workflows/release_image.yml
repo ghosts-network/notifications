@@ -2,7 +2,7 @@ name: Release image
 
 on:
   push:
-    branches: [ ci/init ]
+    branches: [ master ]
 
 jobs:
   push-image:
