@@ -42,6 +42,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Channels.SendGrid.DependencyInjection", "Channels\GhostNetwork.Notifications.Channels.SendGrid.DependencyInjection\GhostNetwork.Notifications.Channels.SendGrid.DependencyInjection.csproj", "{68B7057D-975F-4E1E-9A5D-E2AAF69640E2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Handlers", "Handlers", "{A0CFBD3A-7A5A-4B20-A181-302F956F75BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Http", "Http", "{84B8D11A-7447-4B4C-9984-1B0C744EE3C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostNetwork.Notifications.Handlers.Http", "GhostNetwork.Notifications.Handlers.Http\GhostNetwork.Notifications.Handlers.Http.csproj", "{DD26C6DD-D413-475D-87F2-6A881EF2743F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +110,10 @@ Global
 		{68B7057D-975F-4E1E-9A5D-E2AAF69640E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68B7057D-975F-4E1E-9A5D-E2AAF69640E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68B7057D-975F-4E1E-9A5D-E2AAF69640E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD26C6DD-D413-475D-87F2-6A881EF2743F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD26C6DD-D413-475D-87F2-6A881EF2743F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD26C6DD-D413-475D-87F2-6A881EF2743F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD26C6DD-D413-475D-87F2-6A881EF2743F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2815CC5-C026-4D7A-BBE5-A9481ED12D26} = {A7292590-97B1-414B-A0DD-4901C034499F}
@@ -121,5 +131,7 @@ Global
 		{263251DE-1960-4764-A17C-43C57E3D3A8C} = {A7292590-97B1-414B-A0DD-4901C034499F}
 		{D663294B-A99E-4A83-AECE-55282A4B729C} = {263251DE-1960-4764-A17C-43C57E3D3A8C}
 		{68B7057D-975F-4E1E-9A5D-E2AAF69640E2} = {263251DE-1960-4764-A17C-43C57E3D3A8C}
+		{84B8D11A-7447-4B4C-9984-1B0C744EE3C5} = {A0CFBD3A-7A5A-4B20-A181-302F956F75BF}
+		{DD26C6DD-D413-475D-87F2-6A881EF2743F} = {84B8D11A-7447-4B4C-9984-1B0C744EE3C5}
 	EndGlobalSection
 EndGlobal

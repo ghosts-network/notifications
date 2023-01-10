@@ -4,13 +4,11 @@ using GhostNetwork.Notifications;
 using GhostNetwork.Notifications.Channels.SendGrid;
 using GhostNetwork.Notifications.Channels.SendGrid.DependencyInjection;
 using GhostNetwork.Notifications.Channels.Web.DependencyInjection;
-using GhostNetwork.Notifications.Core;
 using GhostNetwork.Notifications.Core.DependencyInjection;
+using GhostNetwork.Notifications.Handlers.Http;
 using GhostNetwork.Notifications.TemplateCompilers.Handlebars;
 using GhostNetwork.Notifications.TemplateStorages.Folder;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,14 +53,6 @@ builder.Services
 
 var app = builder.Build();
 
-app
-    .MapPost("events/{id}/trigger", async (
-        [FromRoute] string id,
-        [FromBody] Trigger trigger,
-        [FromServices] NotificationManager notificationManager) =>
-    {
-        await notificationManager.TriggerAsync(id, trigger).ConfigureAwait(false);
-        return Results.NoContent();
-    });
+app.UseNotifications();
 
 app.Run();
